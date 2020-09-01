@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.wrapper{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: #000;
+			height: 600px;
+		}
+		.load1{
+			position: relative;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			animation: animate1 2s linear infinite;
+		}
+		.load2{
+			position: relative;
+			width: 200px;
+			height: 200px;
+			border-radius: 50%;
+			animation: animate2 2s linear infinite;
+		}
+		.load1{
+			margin-right: 40px;
+			background: linear-gradient(45deg,transparent,transparent 40%,#e5f403)
+		}
+		.load2{
+			background: linear-gradient(45deg,transparent,transparent 40%,#324589)
+		}
+		@keyframes animate1{
+			from{
+				transform: rotate(0deg);
+				filter: hue-rotate(0deg);
+			}to{
+				transform: rotate(360deg);
+				filter: hue-rotate(360deg);
+			}
+		}
+		@keyframes animate2{
+			from{
+				transform: rotate(360deg);
+				filter: hue-rotate(360deg);
+			}to{
+				transform: rotate(0deg);
+				filter: hue-rotate(0deg);
+			}
+		}
+		.ball::before, .ball::after{
+			content: "";
+			position: absolute;
+			background-color: #000;
+			border-radius: 50%;
+			z-index: 100;
+		}
+		.ball::before{
+			top: 6px;
+			left: 6px;
+			bottom: 6px;
+			right: 6px;
+		}
+		.ball::after{
+			top: 0px;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			background: linear-gradient(45deg,transparent,transparent 40%,#e5f403);
+			filter: blur(30px);
+			z-index: 1;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="load1 ball"></div>
+		<div class="load2 ball"></div>
+	</div>
+</body>
+</html>
